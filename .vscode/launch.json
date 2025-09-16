@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",                                                    // Name
+            "cwd": "${workspaceFolder}",                                        // Path from where commands are executed
+            "executable": "${command:cmake.launchTargetPath}",                  // ELF file
+            "request": "launch",                                                // Connect and program
+            "type": "cortex-debug",                                             // Debug extension
+            "runToEntryPoint": "main",                                          // Run to main and stop there
+            "servertype": "stlink",                                             // Use STLink GDB Server
+            "preLaunchTask": "CMake: kompiluj",                                    // Build project before launch
+            "device": "stm32h743",                                              // MCU type used
+            "interface": "swd",                                                 // Interface setup
+            "svdFile": "${workspaceFolder}/STM32H743.svd",                      // MCU specific SVD file to see registers
+            "preRestartCommands": [
+                "load ${command:cmake.launchTargetPath}"                        // Additional GDB command to program ELF file with restart
+            ],
+            "showDevDebugOutput": "both",                                       // Output setup
+        },
+        {
+            "name": "Attach",                                                   // Name
+            "cwd": "${workspaceFolder}",                                        // Path from where commands are executed
+            "executable": "${command:cmake.launchTargetPath}",                  // ELF file
+            "request": "attach",                                                // Connect and do not program
+            "type": "cortex-debug",                                             // Debug extension
+            "servertype": "stlink",                                             // Use stlink gdb server
+            "device": "stm32h743",                                              // MCU type used
+            "interface": "swd",                                                 // Interface setup
+            "svdFile": "${workspaceFolder}/STM32H743.svd",                      // MCU specifiv SVD file to see registers
+            "showDevDebugOutput": "both",                                       // Output setup
+        },
+    ]
+}

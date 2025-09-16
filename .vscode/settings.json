@@ -1,0 +1,20 @@
+{
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "[cpp]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
+    "clangd.arguments": [
+        "-log=verbose",
+        "-pretty",
+        "--background-index",
+        "--query-driver=/home/artur/st/stm32cube_clt_1.16.0_2/GNU-tools-for-STM32/bin/arm-none-eabi-gcc",
+        "--compile-commands-dir=./build/Debug/"
+    ],
+    "cortex-debug.variableUseNaturalFormat": true,
+    "cmake.configureArgs": [
+        "-DBUILD_NUMBER=0",
+    ],
+    "stm32-for-vscode.openOCDPath": false
+}
