@@ -10,6 +10,8 @@
 #include <stdint.h>
 #include <task.h>
 
+static osThreadId_t g_app_thread_id = NULL;
+
 void loader_turn_led_on(void) {
 
     HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin);

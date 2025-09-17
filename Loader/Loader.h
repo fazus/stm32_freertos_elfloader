@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include "LoaderAPI.h"
 #include "semphr.h"
 
@@ -22,8 +21,6 @@ typedef struct AppContext {
     const char *app_name;       // nazwa aplikacji
 } AppContext;
 
-
-static osThreadId_t g_app_thread_id = NULL;
 
 void loader_turn_led_on(void);
 void loader_delay_ms(uint32_t ms);
