@@ -9,7 +9,7 @@
 #include <semphr.h>
 #include <stdint.h>
 #include <task.h>
-
+#include <ctype.h>
 static osThreadId_t g_app_thread_id = NULL;
 
 void loader_turn_led_on(void) {
